@@ -1,0 +1,36 @@
+<div id="noLogged">
+    <div class="navContainer">
+        <span class="menuTitle" >Yulok</span> 
+        <span class="menuButton" ng-click="vm.openNav()">&emsp;&#9776;&emsp;</span> 
+    </div>
+    <div id="noLoggedNav" class="sidenav" align="center">
+        <a href="javascript:void(0)" class="closebtn" ng-click="vm.closeNav()">&times;</a>
+        <a href="javascript:void(0)" class="menuTitle">Yulok</a>
+        <a ui-sref="about" ng-click="vm.closeNav()">Acerca de</a>
+        <a ui-sref="home" ng-click="vm.closeNav()">Inicio</a>
+        <a ui-sref="signup" ng-click="vm.closeNav()">Registrarse</a>
+        <a ui-sref="login" ng-click="vm.closeNav()">Acceder</a>
+    </div>   
+    <div class="ui-base" ng-show="showMobileMenu">
+        <div ui-view />
+    </div>
+     <div style="height:350px;background-color:rgb(249, 249, 250);">
+         <div class="col-md-2" align="center"></div>
+         <div class="col-md-8" align="center"> 
+              <br></br>
+              <h3>Follow us:</h3> 
+              <br></br>
+              <a target=_blank href="https://www.instagram.com/"><span class="fa fa-instagram fa-5x" style="color:black;"></span></a>  
+              <a target=_blank href="https://www.facebook.com/"><span class="fa fa-facebook-square fa-5x" style="color:black;"></span></a>
+              <a target=_blank href="https://twitter.com/"><span class="fa fa-twitter-square fa-5x" style="color:black;"></span></a>
+              <br></br>     
+         </div>
+         <div class="col-md-2" align="center"></div>        
+    </div>
+    
+    <footer class="footer">
+        <div class="container" align="center">
+            <p class="text-muted">2016 @ All rights reserved. Yulok.</p>
+        </div>
+    </footer> 
+</div>
