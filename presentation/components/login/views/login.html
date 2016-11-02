@@ -1,0 +1,43 @@
+<div id="login" class="container-fluid">
+    <br class="clear" />
+    <br><br/>
+    <!--div for company avatar-->
+    <div class="row">
+        <div class="col-md-4"></div> 
+        <div class="col-md-4" align="center">
+            <div flash-message="4000" ></div> 
+            <br><br/>
+        </div>
+        <div class="col-md-4"></div> 
+    </div>
+    <!--div for login data-->
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4" align="center">
+            <h1>Acceder</h1>
+            <div class="panel-body" align="justify">
+                <form name="loginForm" novalidate>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-envelope"></span>
+                        </span>
+                        <input class="form-control" type="text" placeholder="Correo" required ng-model="userData.username" ng-keypress="($event.which === 13)?validData(loginForm.$valid, userData):0"></input>
+                    </div> 
+                    <br><br>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-lock"></span>
+                        </span>
+                        <input class="form-control" type="password" placeholder="Contraseña" required ng-model="userData.password" ng-keypress="($event.which === 13)?validData(loginForm.$valid, userData):0"></input>
+                    </div> 
+                    <br><br>
+                    <button class="btn btn-primary btn-lg btn-block" type="button"  ng-click="validData(loginForm.$valid, userData)">Iniciar Sesión</button>
+                    <br><br/>
+                    <p>¿No tienes cuenta? <a ui-sref="signup"> Regístrate </a>   
+                    <br><br/>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-4"></div> 
+    </div>
+</div>
