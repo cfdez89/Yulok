@@ -5,14 +5,14 @@
  */
 
 (function() {
-	'use strict';
+    'use strict';
     angular
-		.module('yulok')
-	    .factory('notificationService', notificationService);
+        .module('yulok')
+        .factory('notificationService', notificationService);
 
 	function notificationService(Notification) {
 
-		var delay = 6000;
+        var delay = 6000;
                 
         var setError = function(pMessage) {
             return Notification.error({message: pMessage, title: 'Failure', delay: delay});
@@ -30,10 +30,10 @@
             return Notification.warning({message: pMessage, title: 'Warning !', delay: delay});
         };
 		
-		return {
-			showError: function(pMessage) {
+        return {
+            showError: function(pMessage) {
                 return setError(pMessage);             
-            },
+            }, 
             showSuccess: function(pMessage) {
                 return setSuccess(pMessage);
             },
@@ -43,7 +43,7 @@
             showWarning: function(pMessage) {
                 return setWarning(pMessage);
             }    
-		};   
-	};
+        };   
+    };
 
 })();
