@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" ng-app = yulok>
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <meta name="description" content="description here!">
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+        <title>Yulok</title>
+        <!-- Start css dependences -->
+        <script type="text/javascript" src="/presentation/libs/jquery/jquery-3.1.1.min.js"></script>
+     
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/presentation/styles/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="/presentation/styles/font-awesome/font-awesome.min.css">
+        <link rel="stylesheet" href="/presentation/styles/ui-notification/angular-ui-notification.min.css">
+        <link rel="stylesheet" href="/presentation/styles/app/styles.css">
+        <link rel="stylesheet" href="/presentation/styles/font-awesome/font-awesome.min.css">
+        <!-- End css dependences -->
+
+        <!-- Start Google properties -->
+        <meta property="og:url" content="http://www.yulokcr.com">
+        <meta property="og:title" content="Yulok">
+        <meta property="og:description" content="Yulok your team">
+        <meta property="og:site_name" content="Yulok">
+        <!-- End Google properties -->
+
+        <meta name="apple-mobile-web-app-title" content="Yulok">
+        <meta name="application-name" content="Yulok">
+        
+        <!-- Start libs dependences -->  
+        <script type="text/javascript" src="/presentation/libs/angular/angular.min.js"></script>
+        <script type="text/javascript" src="/presentation/libs/bootstrap/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/presentation/libs/ui-bootstrap/ui-bootstrap-tpls-2.1.3.min.js"></script>
+        <script type="text/javascript" src="/presentation/libs/ui-notification/angular-ui-notification.min.js"></script> 
+        <script type="text/javascript" src="/presentation/libs/ui-router/angular-ui-router.min.js"></script>
+        <!-- End libs dependences --> 
+        
+        <!-- Start routes dependences --> 
+        <script type="text/javascript" src="/presentation/routes/configuration.js"></script>
+        <!-- End routes dependences --> 
+
+        <!-- Start constants dependences -->
+        <script type="text/javascript" src="/presentation/constants/constants.js"></script>
+        <!-- End constants dependences --> 
+
+        <!-- Start services dependences --> 
+        <script type="text/javascript" src="/presentation/services/notificationService.js"></script>
+        <script type="text/javascript" src="/presentation/services/requestService.js"></script>
+        <!-- End services dependences --> 
+
+        <!-- Start controllers dependences --> 
+        <script type="text/javascript" src="/presentation/controllers/noLoggedCtl.js"></script>
+        <!-- End controllers dependences --> 
+  
+
+        
+    </head>
+    <body>
+        <br></br>
+        <div ui-view>
+            <!-- charged specified template here -->
+        </div>
+    </body>
+</html>
