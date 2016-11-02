@@ -24,11 +24,11 @@ angular
         $urlRouterProvider
             .otherwise('/');
         $stateProvider
-		    .state('no-logged', {
-			    abstract: true,
-			    url: '',
-			    templateUrl: '/presentation/components/layout/noLogged/views/noLogged.html',
-			    controller: 'noLoggedCtl as vm'
+           .state('no-logged', {
+                abstract: true,
+                url: '',
+                templateUrl: '/presentation/components/layout/noLogged/views/noLogged.html',
+                controller: 'noLoggedCtl as vm'
             })
             .state('login', {
                 url: '/', 
