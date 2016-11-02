@@ -23,7 +23,19 @@
     font-weight:bold;
     position: relative;
     min-height:100%;
+    top:20%;
+    padding-right: 20px;
+    float: right; 
+}
+.navContainer .menuTitle {
+    font-size:26px;
+    cursor:pointer;
+    color:#f1f1f1;
+    font-weight:bold;
+    position: relative;
+    min-height:100%;
     top:20%; 
+    padding-left: 20px;
 }
 body {
     font-family: "Lato", sans-serif;
@@ -80,4 +92,13 @@ body {
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
+
+  
+}
+/* Hide/show mobile menu button */
+@media screen and (min-width: 411px) {
+  .menuButton  { display: none; }
+}
+@media screen and (max-width: 410px) {
+  .menuButton  { display: block; }
 }
