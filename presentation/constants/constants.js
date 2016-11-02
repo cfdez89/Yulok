@@ -1,7 +1,7 @@
 /*
  *Yulok app
  *By Carlos Fernandez Jimenez
- *App constants
+ *Define app constants
  */
  
 (function() {
