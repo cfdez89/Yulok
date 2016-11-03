@@ -14,26 +14,26 @@
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4" align="center">
-            <h1>Acceder</h1>
+            <h1>Access</h1>
             <div class="panel-body" align="justify">
                 <form name="loginForm" novalidate>
                     <div class="input-group">
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-envelope"></span>
                         </span>
-                        <input class="form-control" type="text" placeholder="Correo" required ng-model="vm.userData.username" ng-keypress="($event.which === 13)?vm.validData(loginForm.$valid, vm.userData):0"></input>
+                        <input class="form-control" type="text" placeholder="Email" required ng-model="vm.userData.username" ng-keypress="($event.which === 13)?vm.validData(loginForm.$valid, vm.userData):0"></input>
                     </div> 
                     <br><br>
                     <div class="input-group">
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-lock"></span>
                         </span>
-                        <input class="form-control" type="password" placeholder="Contraseña" required ng-model="vm.userData.password" ng-keypress="($event.which === 13)?vm.validData(loginForm.$valid, vm.userData):0"></input>
+                        <input class="form-control" type="password" placeholder="Password" required ng-model="vm.userData.password" ng-keypress="($event.which === 13)?vm.validData(loginForm.$valid, vm.userData):0"></input>
                     </div> 
                     <br><br>
-                    <button class="btn btn-primary btn-lg btn-block" type="button"  ng-click="vm.validData(loginForm.$valid, vm.userData)">Iniciar Sesión</button>
+                    <button class="btn btn-primary btn-lg btn-block" type="button"  ng-click="vm.validData(loginForm.$valid, vm.userData)">Log in</button>
                     <br><br/>
-                    <p>¿No tienes cuenta? <a ui-sref="signup"> Regístrate </a>   
+                    <p>¿New user? <a ui-sref="signup"> Sign up </a>   
                     <br><br/>
                 </form>
             </div>
