@@ -10,35 +10,57 @@
         .module('yulok')
         .controller('loginCtl', loginCtl);
 
-    loginCtl.$inject = ['notificationService'];
+    loginCtl.$inject = ['$state', 'userService', 'sessionService', 'shareTeamService', 'validationService', 'notificationService'];
 
-    function loginCtl(notificationService) {
+    function loginCtl($state, userService, sessionService,shareTeamService, validationService, notificationService) {
                
         var vm = this;
-        console.log('from login');
         vm.userData = {
             username: '',
             password: ''
         };
 
-        function validEmail(pEmail) {
-            var expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-            return expr.test(pEmail) ? true: false;
+        function sendToTeam() {
+		console.log("valido");
+            //$state.go('teamProfile.information');
+        }
+
+        function validUser(pData) {
+            if(pData.message === 'Exitoso') {
+                var team = {
+                    id: pData.params[0].userId
+                };
+
+                shareTeamService.setTeam(team);
+                sessionService.setSession(pData.params[0]); //revisar
+                var message = 'Welcome '+pData.params[0].username+' to Yulok your team !';
+                notificationService.showSuccess(message);
+                sendToTeam();
+            }
+            else {
+                notificationService.showError(pData.message);
+            }
         };
 
-        function validData(pIsValid, pData) { console.log('boton');
+        function login(pData) {
+            userService.login(pData).then(function(response) {
+					response.error ? notificationService.showError(response.message) : validUser(response);
+            });
+        };
+
+        function validData(pIsValid, pData) { 
             if(pIsValid) {
-                var emailSuccessStatus = validEmail(pData.username);
+                var emailSuccessStatus = validationService.isEmail(pData.username);
                 if(emailSuccessStatus) {
-                    //login(pData); 
+                    login(pData); 
                 }
                 else {
-                    var message = 'La dirección de correo '+pData.username+' no es válida.';
+                    var message = 'This email: '+pData.username+' is not valid.';
                     notificationService.showError(message);
                 }
             }
             else {
-                var message = 'Debe completar todos los campos solicitados.';
+                var message = 'All fields are required.';
                 notificationService.showWarning(message);
             }
         };
