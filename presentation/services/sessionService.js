@@ -40,7 +40,7 @@
             deleteSession: function() {
                 return deleteSession();             
             },
-             isStartSession: function() {
+            isStartSession: function() {
                 return getStatus();             
             }
         };   
