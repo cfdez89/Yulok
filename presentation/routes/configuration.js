@@ -24,7 +24,7 @@ angular
         $urlRouterProvider
             .otherwise('/');
         $stateProvider
-           .state('no-logged', {
+            .state('no-logged', {
                 abstract: true,
                 url: '',
                 templateUrl: '/presentation/components/layout/noLogged/views/noLogged.html',

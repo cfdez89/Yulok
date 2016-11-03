@@ -21,17 +21,17 @@
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-envelope"></span>
                         </span>
-                        <input class="form-control" type="text" placeholder="Correo" required ng-model="userData.username" ng-keypress="($event.which === 13)?validData(loginForm.$valid, userData):0"></input>
+                        <input class="form-control" type="text" placeholder="Correo" required ng-model="vm.userData.username" ng-keypress="($event.which === 13)?vm.validData(loginForm.$valid, vm.userData):0"></input>
                     </div> 
                     <br><br>
                     <div class="input-group">
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-lock"></span>
                         </span>
-                        <input class="form-control" type="password" placeholder="Contraseña" required ng-model="userData.password" ng-keypress="($event.which === 13)?validData(loginForm.$valid, userData):0"></input>
+                        <input class="form-control" type="password" placeholder="Contraseña" required ng-model="vm.userData.password" ng-keypress="($event.which === 13)?vm.validData(loginForm.$valid, vm.userData):0"></input>
                     </div> 
                     <br><br>
-                    <button class="btn btn-primary btn-lg btn-block" type="button"  ng-click="validData(loginForm.$valid, userData)">Iniciar Sesión</button>
+                    <button class="btn btn-primary btn-lg btn-block" type="button"  ng-click="vm.validData(loginForm.$valid, vm.userData)">Iniciar Sesión</button>
                     <br><br/>
                     <p>¿No tienes cuenta? <a ui-sref="signup"> Regístrate </a>   
                     <br><br/>
