@@ -10,22 +10,16 @@
         .module('yulok')
         .controller('noLoggedCtl', noLoggedCtl);
 
-    function noLoggedCtl() { console.log('no logged');
+    function noLoggedCtl() {
                
         var vm = this;
-        vm.showMobileMenu = true;
 
-        function openNav() {
-            vm.showContent = false;
-            document.getElementById("noLoggedNav").style.width = "100%";
+        var hideMenuBar = function() {
+            $('.navbar-collapse').click('li', function() {
+                $('.navbar-collapse').collapse('hide');
+            });
         };  
 
-        function closeNav() {
-            document.getElementById("noLoggedNav").style.width = "0";
-            vm.showContent = true;
-        };
-        
-        vm.openNav = openNav;
-        vm.closeNav = closeNav;
+        hideMenuBar();
     };	
 })();

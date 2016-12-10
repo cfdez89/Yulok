@@ -1,36 +1,42 @@
 <div id="noLogged">
-    <div class="navContainer">
-        <span class="menuTitle" >Yulok</span> 
-        <span class="menuButton" ng-click="vm.openNav()">&emsp;&#9776;&emsp;</span> 
-    </div>
-    <div id="noLoggedNav" class="sidenav" align="center">
-        <a href="javascript:void(0)" class="closebtn" ng-click="vm.closeNav()">&times;</a>
-        <a href="javascript:void(0)" class="menuTitle">Yulok</a>
-        <a ui-sref="about" ng-click="vm.closeNav()">About</a>
-        <a ui-sref="home" ng-click="vm.closeNav()">Home</a>
-        <a ui-sref="signup" ng-click="vm.closeNav()">Signup</a>
-        <a ui-sref="login" ng-click="vm.closeNav()">Login</a>
-    </div>   
-    <div class="ui-base">
-        <div ui-view />
-    </div>
-     <div style="height:350px;background-color:rgb(249, 249, 250);">
-         <div class="col-md-2" align="center"></div>
-         <div class="col-md-8" align="center"> 
-              <br></br>
-              <h3>Follow us:</h3> 
-              <br></br>
-              <a target=_blank href="https://www.instagram.com/"><span class="fa fa-instagram fa-5x" style="color:black;"></span></a>  
-              <a target=_blank href="https://www.facebook.com/"><span class="fa fa-facebook-square fa-5x" style="color:black;"></span></a>
-              <a target=_blank href="https://twitter.com/"><span class="fa fa-twitter-square fa-5x" style="color:black;"></span></a>
-              <br></br>     
-         </div>
-         <div class="col-md-2" align="center"></div>        
-    </div>
-    
-    <footer class="footer">
-        <div class="container" align="center">
-            <p class="text-muted">2016 @ All rights reserved. Yulok.</p>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" ui-sref="#">Yulok</a>
+            </div>
+            <div class="navbar-collapse collapse" >
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a ui-sref="home">Home</a></li>
+                    <li><a ui-sref="login">Log in</a></li> 
+                    <li><a ui-sref="signup">Sign up</a></li>
+                    <li><a ui-sref="about">About</a></li>
+                </ul>
+            </div>
         </div>
-    </footer> 
+    </div>  
+    <div class="ui-base">
+        <div ui-view /> <br
+    </div>
+    <div class="socialContainer">
+        <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3  col-md-4 col-md-offset-4" align="center"> 
+            <br></br>
+            <h3>Follow us:</h3> 
+            <br></br>
+            <a target=_blank href="https://www.instagram.com/"><span class="fa fa-instagram fa-5x" style="color:black;"></span></a>  
+            <a target=_blank href="https://www.facebook.com/"><span class="fa fa-facebook-square fa-5x" style="color:black;"></span></a>
+            <a target=_blank href="https://twitter.com/"><span class="fa fa-twitter-square fa-5x" style="color:black;"></span></a>
+            <br></br>     
+        </div>      
+    </div>
+    <div class="footerContainer">
+        <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3  col-md-4 col-md-offset-4" align="center"> 
+            <p>2017 @ All rights reserved. Yulok.</p>
+            <br></br>     
+        </div>      
+    </div>
 </div>
