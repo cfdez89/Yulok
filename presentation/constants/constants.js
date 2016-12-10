@@ -8,6 +8,6 @@
     'use strict';
     angular
         .module('yulok')
-        .constant('API_URL', 'http://yulokcr.com');
+        .constant('API_URL', 'http://yulokcr.com/Servidor');
 
 })();
