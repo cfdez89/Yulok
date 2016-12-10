@@ -1,0 +1,38 @@
+<div id="signup" class="container-fluid">
+    <br class="clear" />
+    <br><br/>
+    <div class="row">
+        <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3  col-md-4 col-md-offset-4" align="center">
+            <h1>Sign up</h1>
+            <div class="panel-body" align="justify">
+                <form name="signupForm" novalidate>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-envelope"></span>
+                        </span>
+                        <input class="form-control" type="text" placeholder="Email" required ng-model="userData.email"></input>
+                    </div> 
+                    <br><br>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-lock"></span>
+                        </span>
+                        <input class="form-control" type="password" placeholder="Password" required ng-model="userData.password"></input>
+                    </div> 
+                    <br><br>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-lock"></span>
+                        </span>
+                        <input class="form-control" type="password" placeholder="Confirm password" required ng-model="userData.confirmPassword"></input>
+                    </div> 
+                    <br><br>
+                    <button class="btn btn-primary btn-lg btn-block" type="button"  ng-click="validData(signupForm.$valid, userData)">Sign up</button>
+                    <br><br/> 
+                    <p>Already have an account? <a ui-sref="login"> Enter </a>  
+                    <br><br/>
+                </form>
+            </div>
+        </div>
+    </div>
+</div> 
