@@ -9,7 +9,9 @@ angular
     .module('yulok', [
         'ui.router',
         'ui-notification',
-        'ui.bootstrap'
+        'ui.bootstrap',
+        'jkuri.gallery',
+        'ngSanitize'
     ]);
 
 (function() {
@@ -30,8 +32,50 @@ angular
                 templateUrl: '/presentation/components/layout/noLogged/views/noLogged.html',
                 controller: 'noLoggedCtl as vm'
             })
-            .state('login', {
+            .state('home', {
                 url: '/', 
+                parent: 'no-logged',
+                templateUrl:'/presentation/components/home/views/home.html',
+                controller: 'homeCtl as vm'
+            })
+            .state('search', {
+                url: '/search', 
+                parent: 'no-logged',
+                templateUrl:'/presentation/components/search/views/search.html',
+                controller: 'searchCtl as vm'
+            })
+            .state('team',{
+                    url: '/team', 
+                    parent: 'no-logged',
+                    templateUrl: '/presentation/components/team/views/team.html',
+                    controller: 'teamCtl as vm'
+                })
+            .state('team.informationView',{
+                url: '/information', 
+                parent: 'team',
+                templateUrl: '/presentation/components/team/views/teamInformationView.html',
+                controller: 'teamInformationCtl as vm'
+            })
+            .state('team.photosView',{
+                url: '/photos', 
+                parent: 'team',
+                templateUrl: '/presentation/components/team/views/teamPhotosView.html',
+                controller: 'teamPhotosController'
+            })
+            .state('team.videosView',{
+                url: '/videos', 
+                parent: 'team',
+                templateUrl: '/presentation/components/team/views/teamVideosView.html',
+                controller: 'teamVideosController'
+            })     
+            .state('signup', {
+                url: '/signup', 
+                parent: 'no-logged',
+                templateUrl:'/presentation/components/signup/views/signup.html',
+                controller: 'signupCtl as vm'
+            })
+            .state('login', {
+                url: '/login', 
                 parent: 'no-logged',
                 templateUrl:'/presentation/components/login/views/login.html',
                 controller: 'loginCtl as vm'
