@@ -10,15 +10,17 @@
         .module('yulok')
         .controller('loginCtl', loginCtl);
 
-    loginCtl.$inject = ['$state', 'userService', 'sessionService', 'shareTeamService', 'validationService', 'notificationService'];
+    loginCtl.$inject = ['$state', 'userService', 'sessionService', 'validationService', 'notificationService'];
 
-    function loginCtl($state, userService, sessionService,shareTeamService, validationService, notificationService) {
+    function loginCtl($state, userService, sessionService, validationService, notificationService) {
                
-        var vm = this;
+        var vm      = this;
+        vm.check    = false;
         vm.userData = {
             username: '',
             password: ''
         };
+      
 
         function sendToTeam() {
 		console.log("valido");
@@ -31,7 +33,7 @@
                     id: pData.params[0].userId
                 };
 
-                shareTeamService.setTeam(team);
+                //shareTeamService.setTeam(team);
                 sessionService.setSession(pData.params[0]); //revisar
                 var message = 'Welcome '+pData.params[0].username+' to Yulok your team !';
                 notificationService.showSuccess(message);
@@ -65,8 +67,17 @@
             }
         };
 
+        function showPassword() {
+            var checkStatus = document.getElementById("checkPassword");
+
+            checkStatus.checked ? $('#password').attr('type', 'text')
+                                : $('#password').attr('type', 'password'); 
+        };
+
         vm.validData  = validData;
+        vm.showPassword = showPassword;
 
 
-    };	
+    };
+
 })();
