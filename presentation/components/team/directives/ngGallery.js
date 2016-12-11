@@ -28,10 +28,8 @@ angular.module('jkuri.gallery', [])
 	'<div class="{{ baseClass }}">' +
 	'  <div>' +
 	'    <div ng-repeat="i in images">' +
-	'      ' +
-	'        <img img class= "imageContainer" ng-src="{{ i.thumb }}"" ng-click="openGallery($index)" alt="Image {{ $index + 1 }}" />' +//thumbClass
-	'      ' +
-	'  ' +
+	'        <img img class= "imageContainer" ng-src="{{ i.thumb }}"" ng-click="openGallery($index)" alt="Image {{ $index + 1 }}" />' +
+	'    </div>' +
 	'  </div>' +
 	'</div>' +
 	'<div class="ng-overlay" ng-show="opened">' +
