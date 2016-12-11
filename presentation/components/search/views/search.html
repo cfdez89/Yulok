@@ -1,33 +1,36 @@
 <div class="searchContainer">
-	<div class="row">
-		<div class="col-xs-12 col-sm-10 col-sm-offset-1  col-md-10 col-md-offset-1" align="center"> 
-		    <div class="panel-heading" >
-		        <div class="panel-title">
-		            <form name="homeForm" novalidate>
-		                <div class="input-group">
-		                    <input class="form-control" type="text" placeholder="keyword..." required ng-model="vm.mdlTag" ng-keypress="($event.which === 13)?vm.validData(homeForm.$valid, vm.mdlTag):0">    
-		                    <div class="input-group-btn">
-		                        <button type="button" class="btn btn-primary" ng-click="vm.validData(homeForm.$valid, vm.mdlTag)">
-		                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-		                        </button> 
-		                        <br></br>  
-		                    </div> 
-		                </div>
-		            </form>
-		        </div> 
-		    </div>
-		    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4" ng-repeat="tm in filters=(vm.teams | filter:vm.mdlTag)" > 
-                <div class="thumbnail" align="center">
-                    <img ng-src="{{tm.image}}" width="60%" height="60%" class="img-rounded">
-                    <br></br>
-                    <h2>{{tm.name}}</h2>
-                    <h5>Provincia: {{tm.country}}</h5>
-                    <h5>Deporte: {{tm.sport}}</h5>
-                    <h5>Genero: {{tm.gender}}</h5>
-                    <button type="button" class="btn btn-primary" ng-click="vm.showTeam(tm.id)"><i class="glyphicon glyphicon-eye-open"></i><span>&emsp;Ver perfil</spam></button>
-                    <br></br>
-                </div> 
+	<div class="title" >
+        <p align="left"><span class="label label-danger">Search your team</span></p>    
+    </div>
+    <div class="body container-fluid"> 
+	    <div class="panel-heading" >
+	        <div class="panel-title">
+	            <form name="homeForm" novalidate>
+	                <div class="input-group">
+	                    <input class="form-control" type="text" placeholder="keyword..." required ng-model="vm.mdlTag" ng-keypress="($event.which === 13)?vm.validData(homeForm.$valid, vm.mdlTag):0">    
+	                    <div class="input-group-btn">
+	                        <button type="button" class="btn btn-primary" ng-click="vm.validData(homeForm.$valid, vm.mdlTag)">
+	                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+	                        </button> 
+	                        <br></br>  
+	                    </div> 
+	                </div>
+	            </form>
 	        </div> 
 	    </div>
+	    <br></br>
+		<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" ng-repeat="tm in filters=(vm.teams | filter:vm.mdlTag)"> 
+			<div class="thumbnail" align="center">
+                <img ng-src="{{tm.image}}" width="60%" height="60%" class="img-rounded"></img>
+                <br></br>
+                <h2>{{tm.name}}</h2>
+                <h5>Country: {{tm.country}}</h5>
+                <h5>Sport: {{tm.sport}}</h5>
+                <h5>Gender: {{tm.gender}}</h5>
+                <button type="button" class="btn btn-primary" ng-click="vm.showTeam(tm.id)"><i class="glyphicon glyphicon-eye-open"></i><span>&emsp;View profile</spam></button>
+                <br></br>
+            </div>  
+        </div> 
     </div>
+      <br></br>   
 </div>
