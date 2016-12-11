@@ -22,7 +22,7 @@ angular
     
     routes.$inject = ['$stateProvider', '$urlRouterProvider'];
 
-    function routes($stateProvider, $urlRouterProvider) { console.log('routes');
+    function routes($stateProvider, $urlRouterProvider) { 
         $urlRouterProvider
             .otherwise('/');
         $stateProvider
@@ -49,25 +49,7 @@ angular
                     parent: 'no-logged',
                     templateUrl: '/presentation/components/team/views/team.html',
                     controller: 'teamCtl as vm'
-                })
-            .state('team.informationView',{
-                url: '/information', 
-                parent: 'team',
-                templateUrl: '/presentation/components/team/views/teamInformationView.html',
-                controller: 'teamInformationCtl as vm'
-            })
-            .state('team.photosView',{
-                url: '/photos', 
-                parent: 'team',
-                templateUrl: '/presentation/components/team/views/teamPhotosView.html',
-                controller: 'teamPhotosController'
-            })
-            .state('team.videosView',{
-                url: '/videos', 
-                parent: 'team',
-                templateUrl: '/presentation/components/team/views/teamVideosView.html',
-                controller: 'teamVideosController'
-            })     
+            })    
             .state('signup', {
                 url: '/signup', 
                 parent: 'no-logged',
