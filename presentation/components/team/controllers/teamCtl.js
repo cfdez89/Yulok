@@ -19,7 +19,7 @@
         vm.team = {
                 id:1,
                 image:'/presentation/images/background.jpeg',
-                name:'saprissa',
+                name:'Saprissa',
                 country:'san jose',
                 sport:'futbol',
                 gender: 'masculino'
