@@ -1,45 +1,59 @@
  <div>
-     <div class="teamHeaderContainer" ></div>
-     <div class="container" align="left">
-        <h1 align="center">{{vm.team.name}}</h1>
-        <br><br>  
-        <div class="col-xs-12 col-xs-offset-0 col-sm-12 col-sm-offset-0 col-md-6 col-md-offset-0 col-lg-6 col-lg-offset-0" >
-            <h3> Conózcanos</h3>
-            <h5> Descripcion: {{team.description}}</h5>
-            <h5> Género: {{team.gender}}</h5>
-            <h5> Provincia: {{team.country}}</h5>
-            <h5> Dirección: {{team.direction}}</h5>
-            <h5> Tipo de deporte: {{team.sport}}</h5>
-            <h5> Horario de entrenamiento Lunes a Viernes: {{team.horario}}</h5>
-            <h5> Horario de entrenamiento Sabados: {{team.horario}}</h5>
-            <br><br>   
-       </div> 
-       <div class="col-xs-12 col-xs-offset-0 col-sm-12 col-sm-offset-0 col-md-6 col-md-offset-0 col-lg-6 col-lg-offset-0">    
-            <h3> Contáctenos</h3>
-            <h5> Si desea ponerse en contacto con nosotros para así conocer más acerca de nuestro equipo, le invitamos a dejarnos su mensaje o llamarnos y le responderemos.</h5>
-            <br><br>
-            <h5><span class="glyphicon glyphicon-earphone"> (506){{contact.phone}}</span></h5>
-            <h5><span class="glyphicon glyphicon-envelope"> {{contact.email}}</span></h5>
-            <br><br>
-        </div>   
+    <div class="teamHeaderContainer" >     
+        <div class="title" >
+            <p align="left"><span class="label label-danger">{{vm.team.name}}</span></p>    
+        </div>
     </div>
-    <div class="imagesContainer" align="center">
-        <h3> Images</h3>
-        <br><br>
-        <div class="panel-body">
-            <ng-gallery images="vm.images"></ng-gallery>
+    <div class="aboutTeamContainer" align="right"> 
+        <div class="title" >
+            <p align="right"><span class="label label-info">Know us</span></p>    
+        </div>
+            <div class="body" > 
+            <h4> Description: {{team.description}}</h4>
+            <h4> Gender: {{team.gender}}</h4>
+            <h4> Country: {{team.country}}</h4>
+            <h4> Address: {{team.direction}}</h4>
+            <h4> Sport: {{team.sport}}</h4>
+            <h4> Training time Monday to Friday: {{team.horario}}</h4\>
+            <h4> Training time Saturdays: {{team.horario}}</h4>
+            <br><br>  
+            </div>   
+    </div>
+     <div class="contactContainer" align="left">    
+        <div class="title" >
+            <p align="left"><span class="label label-primary">Contact</span></p>    
+        </div>
+        <div class="body" > 
+            <h4>If you want to contact us to know more about our team, we invite you to leave your message or call us and we will respond.</h4>
             <br><br>
+            <h4><span class="glyphicon glyphicon-earphone"> (506){{contact.phone}}</span></h4>
+            <h4><span class="glyphicon glyphicon-envelope"> {{contact.email}}</span></h4>
+            <br><br>
+        </div> 
+    </div> 
+    <div class="imagesContainer" align="center">
+        <div class="title" >
+            <p align="right"><span class="label label-success">Images</span></p>    
+        </div>
+        <div class="body" > 
+            <div class="panel-body">
+                <ng-gallery images="vm.images"></ng-gallery>
+                <br><br>
+            </div>
         </div>
     </div> 
    
     <div class="videosContainer" align="center">
-        <h3 > Videos</h3>
-        <br><br>
-        <div class="panel-body">
-            <div ng-repeat="video in vm.teamVideos">
-                <iframe class="videoContainer" class="youtube-player" type="text/html" ng-src="{{vm.trustSrc(video.url)}}" allowfullscreen frameborder="0"></iframe>
-            </div>
+        <div class="title" >
+            <p align="left"><span class="label label-warning">Videos</span></p>    
         </div>
-        <br><br>
+        <div class="body" > 
+            <div class="panel-body">
+                <div ng-repeat="video in vm.teamVideos">
+                    <iframe class="videoContainer" class="youtube-player" type="text/html" ng-src="{{vm.trustSrc(video.url)}}" allowfullscreen frameborder="0"></iframe>
+                </div>
+            </div>
+            <br><br>
+        </div>
     </div> 
 </div> 
