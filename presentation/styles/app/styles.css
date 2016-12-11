@@ -18,21 +18,41 @@
     color:white;
 }
 .searchContainer {
-    padding-top:40px;
     width:100%;
     min-height:350px;
 }
+.searchContainer .title {
+    padding-top:40px;
+    font-size:44px;
+}
+.searchContainer .body{
+    padding-top:20px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+.searchContainer .thumbnail{
+    border-top-style:solid;
+    border-top-width:0.3em;
+    border-top-color:red;
+    background-color:rgb(248, 248, 250);
+}
+
 .teamHeaderContainer {
     background:url(/presentation/images/team.jpg);
-    background-repeat: no-repeat; 
-    background-position: center;
+    background-repeat:no-repeat; 
+    background-position:center;
     background-size:cover;
     background-color:#222222;
     background-position:absolute;
     width:100%;
     height:350px; 
-    color:green;
-    font-size: 72px;
+    font-size:72px;
+    padding-top:270px;
+}
+
+.teamHeaderContainer .title {
+    padding-bottom:0px;
+     font-size:44px;
 }
 .panel-body {
     padding-top: 0;
@@ -53,6 +73,13 @@
     float:left;
     background-size:cover;  
 }
+.imagesContainer .title {
+    padding-bottom: 0px;
+    font-size: 44px;
+}
+.imagesContainer .body{
+    padding-top: 40px;
+}
 .videosContainer {
     padding-top:10px;
     width:100%; 
@@ -64,7 +91,41 @@
     background-size:cover;
 
 }
-
+.videosContainer .title {
+    padding-bottom: 0px;
+    font-size: 44px;
+}
+.videosContainer .body{
+    padding-top: 40px;
+}
+.aboutTeamContainer {
+    background-color:rgb(248, 248, 250);
+    width:100%;
+    height:400px; 
+}
+.aboutTeamContainer .title {
+    padding-bottom: 0px;
+    font-size: 44px;
+}
+.aboutTeamContainer .body{
+    padding-top: 40px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+.contactContainer {
+    width:100%;
+    height:400px; 
+  
+}
+.contactContainer .title {
+    padding-bottom: 0px;
+    font-size: 44px;
+}
+.contactContainer .body{
+    padding-top: 40px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
 .socialContainer {
     background-color:rgb(248, 248, 250);
     width:100%;
@@ -72,13 +133,27 @@
 }
 
 .footerContainer {
-    padding-top:120px;
     color:white;
     background-color: #222222;
     width:100%;
     height:300px; 
 
+    
+ 
+   
+
+} 
+.footerContainer .social{
+    padding-top: 20px;
+    margin-right: 40px; 
 }
+.footerContainer .copyright{
+    padding-top:50px;
+    margin-left:40px;
+}
+
+
+
 
 
 
