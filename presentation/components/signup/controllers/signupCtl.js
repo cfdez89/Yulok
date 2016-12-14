@@ -23,12 +23,12 @@
         };
       
 
-        function sendToEditTeam() {
-            //$state.go('addTeam');
+        function sendToAddTeam() {
+            $state.go('addTeam');
         }
 
         function welcomeMessage(pUsername) {
-            var message = 'Hola '+pUsername+' te has registrado en Yulok.<br />Por favor ingresa los datos de tu equipo.';
+            var message = 'Welcome '+pUsername+' You registered for Yulok.<br />Please enter your team data.';
 		    notificationService.showSuccess(message);
         };
 
@@ -39,22 +39,22 @@
 		    };
             userService.signup(user).then(function(response) {
 					response.error ? notificationService.showError(response.message) 
-                                   : sessionService.setSession(pResp.params[0]), 
-                                     welcomeMessage(pResp.params[0].username),
-						             sendToEditTeam();
+                                   : sessionService.setSession(response.params[0]), 
+                                     welcomeMessage(response.params[0].username),
+						             sendToAddTeam();
             });
         };
 
         function validData(pIsValid, pData) { 
-            if(pIsValid) {
+            if(pIsValid) {  
                 var emailSuccessStatus = validationService.isEmail(pData.username);
 				var passwordSuccessStatus = validationService.comparePassword(pData.password, pData.confirmPassword);
-				var lengthPasswordSuccesStatus = isPasswordMin(pData.password);
-
-                if(!emailSuccessStatus) {
+				var lengthPasswordSuccesStatus =  validationService.isPasswordMin(pData.password);
+console.log(pData);console.log(emailSuccessStatus);
+                /*if(!emailSuccessStatus) {
 				    var message = 'La dirección de correo '+pData.email+' no es válida.';
 				    notificationService.showError(message);
-				}
+				}*/
 				if(!passwordSuccessStatus){
                     var message = 'Las contraseñas no coinciden.';
 				    notificationService.showError(message);
@@ -63,7 +63,7 @@
                     var message = 'La contraseña debe tener almenos 7 caractéres.';
 				    notificationService.showError(message);
 				}
-				else if(emailSuccessStatus && passwordSuccessStatus){
+				else if(!emailSuccessStatus && passwordSuccessStatus){//cambiar el negativo
 				    signup(pData);
 				}
             }

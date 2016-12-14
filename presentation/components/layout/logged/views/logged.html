@@ -1,5 +1,5 @@
 <div id="logged">
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-default  navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -12,17 +12,17 @@
             <div class="navbar-collapse collapse" >
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a ui-sref="teamProfile.information">Perfil</a>
+                        <a ui-sref="addTeam">Profile</a>
                     </li>
                     <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                    <i class="glyphicon glyphicon-user"></i>{{username}}<span class="caret"></span></a>
+                    <i class="glyphicon glyphicon-user"></i>{{vm.username}}<span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a ui-sref="configuration.passwordReset"><i class="glyphicon glyphicon-cog"></i>&emsp;Configuración</a>
+                        <a ui-sref="addTeam"><i class="glyphicon glyphicon-cog"></i>&emsp;Configuration</a>
                     </li>
                     <li>
-                        <a ui-sref="login"><i class="glyphicon glyphicon-log-out"></i>&emsp;Salir</a>
+                        <a ui-sref="login"><i class="glyphicon glyphicon-log-out"></i>&emsp;Log out</a>
                     </li>
                 </ul>
             </li>

@@ -14,7 +14,8 @@
                
         var vm = this;
 
-        var hideMenuBar = function() {
+
+        function hideMenuBar() {
             $('.navbar-collapse').click('li', function() {
                 $('.navbar-collapse').collapse('hide');
             });

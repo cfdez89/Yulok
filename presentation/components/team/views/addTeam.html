@@ -1,0 +1,159 @@
+<div id="editTeam" class="container-fluid">
+    <!--div for edit data team-->
+    <div class="row" ng-show="vm.showProfile">
+     
+       
+            <br><br>
+            <h1>Crear el equipo</h1>
+            <div class="panel panel-default">
+                <div class="panel-body"> 
+                    <div class="row">  
+                        <div class="col-md-5" align="justify">
+                            <h3>Informacion del equipo</h3>
+                            <p>¿Que deporte practicas?</p>
+                            <select id="opcDeporte" class="form-control" >
+                                <option>Futbol</option>
+                                <option>Rugby</option>
+                                <option>Baloncesto</option>
+                                <option>Atletismo</option>
+                                <option>Natacion</option>
+                            </select>
+                            <br><br/>
+                            <p>¿Cual es el nombre del equipo?</p>
+                            <input class="form-control" type="text" placeholder="Nombre" required ng-model="vm.information.name"></input>
+                            <br><br>
+                            <p>¿Como describes tu equipo?</p>
+                            <textarea type="text"  align="justify" class="form-control" placeholder="Descripcion" required  ng-model="vm.information.description"></textarea>
+                            <br><br>
+                            <p>¿Cual es el genero de los integrantes del equipo?</p>
+                            <select id="opcGenero" class="form-control" >
+                                <option>Masculino</option>
+                                <option>Femenino</option>
+                                <option>Mixto</option>
+                            </select>
+                            <br><br>
+                        </div>
+                        <div class="col-md-2"></div>
+                        <div class="col-md-5" align="justify">
+                            <h3>Informacion de contacto</h3>
+                            <p>¿Quien es el encargado del equipo?</p>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-user"></span>
+                                </span>
+                                <input class="form-control" type="text" placeholder="Nombre" required ng-model="vm.contact.managerName"></input>
+                            </div> 
+                            <br><br>
+                            <input class="form-control" type="text" placeholder="Apellido" required ng-model="vm.contact.managerLastName"></input>
+                            <br><br>
+                            <p>¿A donde pueden enviar un mensaje?</p>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-envelope"></span>
+                                </span>
+                                <input class="form-control" type="text" placeholder="email@example.com" required ng-model="vm.contact.email"></input>
+                            </div>
+                            <br><br>
+                            <p>¿A que numero pueden llamar?</p>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-earphone"></span>
+                                </span>
+                                <input class="form-control" type="text" placeholder="8888-8888" required ng-model="vm.contact.phone"></input>
+                            </div>
+                            <br><br>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <div class="row"> 
+                <div class="col-md-6"></div>
+                <div class="col-md-6" align="right">
+                    <button class="btn btn-primary" type="button"  ng-click="vm.validData()">Siguiente</button>
+                    <br><br/>
+                </div> 
+            </div> 
+       
+    </div>
+
+    <div class="row" ng-show="vm.showLocation">
+        <div class="col-md-1"></div>
+        <div class="col-md-10" align="center">
+            <h1>Entrenamiento</h1>
+            <div class="panel panel-default">
+                <div class="panel-body"> 
+                    <div class="col-md-5" align="justify">
+                        <p>¿En que provincia se encuentra?</p>
+                        <select id="opcProvincia" class="form-control" >
+                            <option>San Jose</option>
+                            <option>Alajuela</option>
+                            <option>Heredia</option>
+                            <option>Cartago</option>
+                            <option>Limon</option>
+                            <option>Guanacaste</option>
+                            <option>Puntarenas</option>
+                        </select>
+                        <br><br>
+                         <p>¿Donde se realizan los entrenamientos?</p>
+                        <input class="form-control" type="text" placeholder="Direccion del lugar" required ng-model="vm.information.direction"></input>
+                        <br><br>
+                        <p>Cual es el dia y la hora de los entrenamientos:</p>
+                        <div class="row">
+                        <!--
+                            <ul class="unstyled">
+                                <li ng-repeat="dateTimeSelect in information.trainingDays">
+                                    {{dateTimeSelect.day}}
+                                </li>
+                            </ul>
+                        -->
+
+                        <br><br>
+                        <input class="form-control" type="text" placeholder="Horario" required ng-model="vm.information.horario"></input>
+                        <br><br>
+
+                        </div>
+                        <!--
+                        <div class="row">
+                            <div class="col-md-4">
+                                <select id="dayOpc" class="form-control" >
+                                    <option>Lunes</option>
+                                    <option>Martes</option>
+                                    <option>Miercoles</option>
+                                    <option>Jueves</option>
+                                    <option>Viernes</option>
+                                    <option>Sabado</option>
+                                    <option>Domingo</option>
+                                </select>
+                                <br><br>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="input-group bootstrap-timepicker timepicker">
+                                    <input id="time" class="form-control input-small" type="text" ng-model="time"required></input>
+                                    <span class="input-group-addon">
+                                        <i class="glyphicon glyphicon-time"></i>
+                                    </span>
+                                </div>
+                                <br><br>
+                            </div>
+                            <div class="col-md-3">
+                                <button class="btn btn-primary" type="button"  ng-click="addTrainingDay()">Agregar</button>
+                            </div>
+                        </div>
+                        -->
+                        
+                        <br><br/>
+                    </div>
+                    <div class="col-md-7"></div>
+                </div>
+            </div> 
+            <div class="row"> 
+                <div class="col-md-6"></div>
+                <div class="col-md-6" align="right">
+                    <button class="btn btn-primary" type="button"  ng-click="vm.addInformation()">Finalizar</button>
+                    <br><br>
+                </div> 
+            </div> 
+        </div>
+        <div class="col-md-1"></div> 
+    </div>
+</div> 

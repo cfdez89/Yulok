@@ -32,6 +32,12 @@ angular
                 templateUrl: '/presentation/components/layout/noLogged/views/noLogged.html',
                 controller: 'noLoggedCtl as vm'
             })
+            .state('logged',{
+                abstract: true,
+                url: '',
+                templateUrl: '/presentation/components/layout/logged/views/logged.html',
+                controller: 'loggedCtl as vm'
+            })
             .state('home', {
                 url: '/', 
                 parent: 'no-logged',
@@ -45,10 +51,16 @@ angular
                 controller: 'searchCtl as vm'
             })
             .state('team',{
-                    url: '/team', 
-                    parent: 'no-logged',
-                    templateUrl: '/presentation/components/team/views/team.html',
-                    controller: 'teamCtl as vm'
+                url: '/team', 
+                parent: 'no-logged',
+                templateUrl: '/presentation/components/team/views/team.html',
+                controller: 'teamCtl as vm'
+            })
+            .state('addTeam',{
+                url: '/addTeam', 
+                parent: 'logged',
+                templateUrl: '/presentation/components/team/views/addTeam.html',
+                controller: 'addTeamCtl as vm'
             })    
             .state('signup', {
                 url: '/signup', 
