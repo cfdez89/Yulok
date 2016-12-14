@@ -10,51 +10,44 @@
         .module('yulok')
         .controller('searchCtl', searchCtl);
 
-    searchCtl.$inject = ['$state', 'shareTeamService', 'validationService', 'notificationService'];
+    searchCtl.$inject = ['$state', '$stateParams' , 'teamService', 'shareTeamService', 'validationService', 'notificationService'];
 
-    function searchCtl($state, shareTeamService, validationService, notificationService) {
+    function searchCtl($state, $stateParams, teamService, shareTeamService, validationService, notificationService) {
                
         var vm = this;
-        vm.teams = [{
-        	id:1,
-        	name:'saprissa',
-            country:'san jose',
-            sport:'futbol',
-            gender: 'masculino'
-        },
-        {
-        	id:2,
-        	name:'heredia',
-            country:'heredia',
-            sport:'futbol',
-            gender: 'masculino'
-        },
-         {
-        	id:3,
-        	name:'alajuela',
-            country:'alajuela',
-            sport:'futbol',
-            gender: 'masculino'
-        },
-         {
-        	id:4,
-        	name:'cartago',
-            country:'cartago',
-            sport:'futbol',
-            gender: 'masculino'
-        }];
-		vm.mdlTag   = "";
+        vm.teams = [];
 
-		function showTeam(pId) {
+		vm.mdlTag = $stateParams.value;
+        findTeams(vm.mdlTag);
+
+        function findTeams(pTag){
+            teamService.allTeams().then(function(response){
+                response.error ? notificationService.showError(response.message) : vm.teams = response.params;   
+            }
+        )};
+
+        function validData(pIsValid, pData) {
+            if(pIsValid){
+                //findTeams(pData);
+                $state.go('search', {value:pData});
+            }
+            else {
+                var message = 'You must enter a word to perform the search.';
+                notificationService.showWarning(message);
+            }
+        };
+
+
+		function showTeam(pId) {  
 			var team = {
 				id: pId
 			};
-			console.log(team);
 
 			shareTeamService.setTeam(team);
 			$state.go('team');
 		};
 
+        vm.validData  = validData;
 		vm.showTeam = showTeam;
 
 

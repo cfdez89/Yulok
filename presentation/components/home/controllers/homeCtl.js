@@ -15,13 +15,14 @@
     function homeCtl($state, validationService, notificationService) {
                
         var vm = this;
-        function validData(pIsValid, pData) {$state.go('search');
+        vm.mdlTag = "";
+
+        function validData(pIsValid, pData) {
 			if(pIsValid){
-				//findTeams(pData);
-				$state.go('search');
+				$state.go('search', {value:pData});
 			}
 			else {
-				var message = 'Debe ingresar una palabra para realizar la búsqueda.';
+				var message = 'You must enter a word to perform the search.';
 				notificationService.showWarning(message);
 			}
 		};
