@@ -39,7 +39,7 @@ angular
                 controller: 'homeCtl as vm'
             })
             .state('search', {
-                url: '/search', 
+                url: '/search/:value', 
                 parent: 'no-logged',
                 templateUrl:'/presentation/components/search/views/search.html',
                 controller: 'searchCtl as vm'
