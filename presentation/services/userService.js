@@ -70,7 +70,7 @@
             },
             deleteUser: function(pData) {
                 return deleteUser(pData);             
-            },      
+            }     
         };   
     };
 
