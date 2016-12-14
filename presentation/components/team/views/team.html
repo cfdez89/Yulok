@@ -4,36 +4,45 @@
             <p align="left"><span class="label label-danger">{{vm.team.name}}</span></p>    
         </div>
     </div>
-    <div class="aboutTeamContainer" align="right"> 
+    <div class="aboutTeamContainer"> 
         <div class="title" >
             <p align="right"><span class="label label-info">Know us</span></p>    
         </div>
-            <div class="body" > 
-            <h4> Description: {{team.description}}</h4>
-            <h4> Gender: {{team.gender}}</h4>
-            <h4> Country: {{team.country}}</h4>
-            <h4> Address: {{team.direction}}</h4>
-            <h4> Sport: {{team.sport}}</h4>
-            <h4> Training time Monday to Friday: {{team.horario}}</h4\>
-            <h4> Training time Saturdays: {{team.horario}}</h4>
+            <div class="body" align="right"> 
+            <h4> Description: {{vm.team.description}}</h4>
+            <h4> Gender: {{vm.team.gender}}</h4>
+            <h4> Country: {{vm.team.country}}</h4>
+            <h4> Address: {{vm.team.direction}}</h4>
+            <h4> Sport: {{vm.team.sport}}</h4>
+            <h4> Training time Monday to Friday: {{vm.team.horario}}</h4\>
+            <h4> Training time Saturdays: {{vm.team.horario}}</h4>
             <br><br>  
             </div>   
     </div>
-     <div class="contactContainer" align="left">    
+     <div class="contactContainer">    
         <div class="title" >
             <p align="left"><span class="label label-primary">Contact</span></p>    
         </div>
-        <div class="body" > 
+        <div class="body" align="left"> 
             <h4>If you want to contact us to know more about our team, we invite you to leave your message or call us and we will respond.</h4>
+            <a target=_blank href="tel:{{vm.contact.phone}}"><h4><span class="glyphicon glyphicon-earphone"> (506){{vm.contact.phone}}</span></h4></a>
+            <a target=_blank href="mailto:{{vm.contact.email}}"><h4><span class="glyphicon glyphicon-envelope"> {{vm.contact.email}}</span></h4></a>
             <br><br>
-            <h4><span class="glyphicon glyphicon-earphone"> (506){{contact.phone}}</span></h4>
-            <h4><span class="glyphicon glyphicon-envelope"> {{contact.email}}</span></h4>
-            <br><br>
+        </div> 
+    </div> 
+    <div class="findContainer">    
+        <div class="title" >
+            <p align="right"><span class="label label-default">Find us</span></p>    
+        </div>
+        <div class="body" align="right"> 
+            <h4>If you want to reach the place where we are located, click on the address so that you can find us on Google Maps.</h4>
+            <a target=_blank href="https://www.google.co.cr/maps/@9.9367288,-84.109913,17z?hl=es-419"><h4><span class="glyphicon glyphicon-map-marker"> {{vm.team.direction}}</span></h4></a>
+            <br><br/>
         </div> 
     </div> 
     <div class="imagesContainer" align="center">
         <div class="title" >
-            <p align="right"><span class="label label-success">Images</span></p>    
+            <p align="left"><span class="label label-success">Images</span></p>    
         </div>
         <div class="body" > 
             <div class="panel-body">
@@ -45,12 +54,12 @@
    
     <div class="videosContainer" align="center">
         <div class="title" >
-            <p align="left"><span class="label label-warning">Videos</span></p>    
+            <p align="right"><span class="label label-warning">Videos</span></p>    
         </div>
         <div class="body" > 
             <div class="panel-body">
                 <div ng-repeat="video in vm.teamVideos">
-                    <iframe class="videoContainer" class="youtube-player" type="text/html" ng-src="{{vm.trustSrc(video.url)}}" allowfullscreen frameborder="0"></iframe>
+                    <iframe class="videoContainer" class="youtube-player" ng-src="{{vm.trustSrc(video.url)}}"  webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder="0"></iframe>
                 </div>
             </div>
             <br><br>
