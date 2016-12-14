@@ -10,20 +10,15 @@
         .module('yulok')
         .controller('teamCtl', teamCtl);
 
-    teamCtl.$inject = ['$state','$sce', 'shareTeamService', 'validationService', 'notificationService'];
+    teamCtl.$inject = ['$state','$sce',  'teamService', 'shareTeamService', 'validationService', 'notificationService'];
 
-    function teamCtl($state, $sce,shareTeamService, validationService, notificationService) {
+    function teamCtl($state, $sce,  teamService, shareTeamService, validationService, notificationService) {
                
         var vm = this;
 
-        vm.team = {
-                id:1,
-                image:'/presentation/images/background.jpeg',
-                name:'Saprissa',
-                country:'san jose',
-                sport:'futbol',
-                gender: 'masculino'
-            }
+        vm.team = {};
+        vm.contact = {};
+        vm.teamVideos = [];
 
         vm.images = [{
             'thumb':'http://www.hotelcompostela.es/files/hotel/hotel-rooms/habitacion-hotel-compostela-001.jpg',
@@ -57,69 +52,47 @@
         }
         ];
 
+        function setImage(){
+            document.getElementsByClassName('teamHeaderContainer')[0].style.backgroundImage = "url("+vm.team.image+")"; 
+        }
 
-
-        vm.teamVideos = [{
-            id:0,
-            url:'https://www.youtube.com/v/9HEji-SiYCg',
-        },
-        {
-            id:1,
-            url:'https://www.youtube.com/v/9HEji-SiYCg',
-        },
-         {
-            id:2,
-            url:'https://www.youtube.com/v/9HEji-SiYCg',
-        },
-         {
-            id:3,
-            url:'https://www.youtube.com/v/9HEji-SiYCg',
-        },
-        {
-            id:4,
-            url:'https://www.youtube.com/v/9HEji-SiYCg',
-        },
-        {
-            id:5,
-            url:'https://www.youtube.com/v/9HEji-SiYCg',
-        },
-         {
-            id:6,
-            url:'https://www.youtube.com/v/9HEji-SiYCg',
-        }];
 
         function trustSrc(src) {
             return $sce.trustAsResourceUrl(src);
         };
         
-        var uploadVideos = function(){
-            /*
+        function getVideos(){
             var teamId = shareTeamService.getTeam();
                 
-            teamsService.getVideos(teamId.id).then(function(pResp){
+            teamService.getVideos(teamId.id).then(function(response){
                     
-                pResp.error ? notificationService.showError(pResp.message) : $scope.teamVideos = pResp.params;      
-            });*/
+                response.error ? notificationService.showError(response.message) : vm.teamVideos = response.params;      
+            });
         };
-        vm.trustSrc =trustSrc;
 
-        uploadVideos();
+        vm.trustSrc = trustSrc;
             
-        var uploadTeam = function(){
-
-            /*
+        function getTeam() {
+            
             var team = shareTeamService.getTeam();
                 
-            teamsService.getTeam(team.id).then(function(pResp){
-                pResp.error ? notificationService.showError(pResp.message) : $scope.team = pResp.params[0];     
-            });*/
+            teamService.getTeam(team.id).then(function(response){
+                response.error ? notificationService.showError(response.message) : vm.team = response.params[0];     
+                setImage();
+            });
         };
-        
-       // uploadTeam();
+
+        function getContact() {
+            var team = shareTeamService.getTeam();
+            teamService.getContact(team.id).then(function(response){
+                response.error ? notificationService.showError(response.message) : vm.contact = response.params[0];  
+            });
+        };
+
+        getTeam();
+        getContact();
+        getVideos();
        
-
-
-
 
       
     };
