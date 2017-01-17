@@ -5,6 +5,8 @@
  */
 
 /* .Social div no-repeat fixed center*/
+
+
 .headerContainer {
     background:url(/presentation/images/background.jpeg);
     background-repeat: no-repeat; 
@@ -66,6 +68,20 @@
     padding-right: 0;
 
 }
+
+.addTeamContainer {
+    width:100%;
+    min-height:400px; 
+}
+.addTeamContainer .title {
+    font-size: 44px;
+}
+.addTeamContainer .body{
+    padding-top: 40px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
 
 .imagesContainer {
     background-color:rgb(248, 248, 250);

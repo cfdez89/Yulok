@@ -23,7 +23,7 @@
       
 
         function sendToTeam() {
-		console.log("valido");
+            console.log("valido");
             //$state.go('teamProfile.information');
         }
 

@@ -57,118 +57,118 @@
                             });
                 };
                
-                var deleteImageById = function(pId){
-                    var url = '/Servidor/eliminar_imagenes_equipo.php';
-                    
-                    var data = {
-                        id:pId
-                    }
+        var deleteImageById = function(pId){
+            var url = '/Servidor/eliminar_imagenes_equipo.php';
+            
+            var data = {
+                id:pId
+            }
 
-                    return  requestService.create(url, data).then(function(pResp){
-                                return pResp.data;
-                            },
-                            function(pResp){
-                                return pResp.data;
-                            });
-                };
-                
-                var getVideoById = function(pId){
-                    var url = '/Servidor/getVideos.php';
-                    
-                    var data = {
-                        id:pId
-                    }
+            return  requestService.create(url, data).then(function(pResp){
+                        return pResp.data;
+                    },
+                    function(pResp){
+                        return pResp.data;
+                    });
+        };
+        
+        var getVideoById = function(pId){
+            var url = '/Servidor/getVideos.php';
+            
+            var data = {
+                id:pId
+            }
 
-                    return  requestService.create(url, data).then(function(pResp){
-                                return pResp.data;
-                            },
-                            function(pResp){
-                                return pResp.data;
-                            });
-                };
-                
-                var deleteVideoById = function(pData){
-                    var url = '/Servidor/eliminar_videos_equipo.php';
+            return  requestService.create(url, data).then(function(pResp){
+                        return pResp.data;
+                    },
+                    function(pResp){
+                        return pResp.data;
+                    });
+        };
+        
+        var deleteVideoById = function(pData){
+            var url = '/Servidor/eliminar_videos_equipo.php';
 
-                    return  requestService.create(url, pData).then(function(pResp){
-                                return pResp.data;
-                            },
-                            function(pResp){
-                                return pResp.data;
-                            });
-                };
+            return  requestService.create(url, pData).then(function(pResp){
+                        return pResp.data;
+                    },
+                    function(pResp){
+                        return pResp.data;
+                    });
+        };
 
-                var getContactById = function(pId){
-                    var url = '/Servidor/get_info_contacto.php';
-                    
-                    var data = {
-                        id:pId
-                    }
+        var getContactById = function(pId){
+            var url = '/Servidor/get_info_contacto.php';
+            
+            var data = {
+                id:pId
+            }
 
-                    return  requestService.create(url, data).then(function(pResp){
-                                return pResp.data;
-                            },
-                            function(pResp){
-                                return pResp.data;
-                            });
-                };
-
-
-                var addVideo = function(pData){
-                    var url = '/Servidor/guardar_videos.php';
-
-                    return  requestService.create(url, pData).then(function(pResp){
-                                return pResp.data;
-                            },
-                            function(pResp){
-                                return pResp.data;
-                            });
-                };
-
-                var sendNewTeam = function(pData){
-                    var url = '/Servidor/crear_equipo.php';
-
-                    return  requestService.create(url, pData).then(function(pResp){
-                                return pResp.data;
-                            },
-                            function(pResp){
-                                return pResp.data;
-                            });
-                };
-
-                var sendContact = function(pData){
-                    var url = '/Servidor/actualizar_info_contacto.php';
-
-                    return  requestService.create(url, pData).then(function(pResp){
-                                return pResp.data;
-                            },
-                            function(pResp){
-                                return pResp.data;
-                            });
-                };
+            return  requestService.create(url, data).then(function(pResp){
+                        return pResp.data;
+                    },
+                    function(pResp){
+                        return pResp.data;
+                    });
+        };
 
 
-                var sendUpdateTeam = function(pData){
-                    var url = '/Servidor/actualizar_info_equipo.php';
+        var addVideo = function(pData){
+            var url = '/Servidor/guardar_videos.php';
 
-                    return  requestService.create(url, pData).then(function(pResp){
-                                return pResp.data;
-                            },
-                            function(pResp){
-                                return pResp.data;
-                            });
-                };
+            return  requestService.create(url, pData).then(function(pResp){
+                        return pResp.data;
+                    },
+                    function(pResp){
+                        return pResp.data;
+                    });
+        };
 
-                var sendUpdateContact = function(pData){
-                    var url = '/Servidor/actualizar_info_contacto.php';
+        var sendNewTeam = function(pData){
+            var url = '/Servidor/crear_equipo.php';
 
-                    return  requestService.create(url, pData).then(function(pResp){
-                                return pResp.data;
-                            },
-                            function(pResp){
-                                return pResp.data;
-                            });
-                };
+            return  requestService.create(url, pData).then(function(pResp){
+                        return pResp.data;
+                    },
+                    function(pResp){
+                        return pResp.data;
+                    });
+        };
+
+        var sendContact = function(pData){
+            var url = '/Servidor/actualizar_info_contacto.php';
+
+            return  requestService.create(url, pData).then(function(pResp){
+                        return pResp.data;
+                    },
+                    function(pResp){
+                        return pResp.data;
+                    });
+        };
+
+
+        var sendUpdateTeam = function(pData){
+            var url = '/Servidor/actualizar_info_equipo.php';
+
+            return  requestService.create(url, pData).then(function(pResp){
+                        return pResp.data;
+                    },
+                    function(pResp){
+                        return pResp.data;
+                    });
+        };
+
+        var sendUpdateContact = function(pData){
+            var url = '/Servidor/actualizar_info_contacto.php';
+
+            return  requestService.create(url, pData).then(function(pResp){
+                        return pResp.data;
+                    },
+                    function(pResp){
+                        return pResp.data;
+                    });
+        };
 
 
 		

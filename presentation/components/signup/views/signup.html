@@ -16,15 +16,20 @@
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-lock"></span>
                         </span>
-                        <input class="form-control" type="password" placeholder="Password" required ng-model="vm.userData.password"></input>
+                        <input id="password" class="form-control" type="password" placeholder="Password" required ng-model="vm.userData.password"></input>
                     </div> 
                     <br><br>
                     <div class="input-group">
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-lock"></span>
                         </span>
-                        <input class="form-control" type="password" placeholder="Confirm password" required ng-model="vm.userData.confirmPassword"></input>
+                        <input id="confirmPassword" class="form-control" type="password" placeholder="Confirm password" required ng-model="vm.userData.confirmPassword"></input>
                     </div> 
+                    <br><br>
+                    <div class="input-group">
+                        <input id="checkPassword" type="checkbox" ng-click="vm.showPassword()">
+                        <span > Show password</span>
+                    </div>
                     <br><br>
                     <button class="btn btn-primary btn-lg btn-block" type="button"  ng-click="vm.validData(signupForm.$valid, vm.userData)">Sign up</button>
                     <br><br/> 

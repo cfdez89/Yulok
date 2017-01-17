@@ -61,7 +61,13 @@ angular
                 parent: 'logged',
                 templateUrl: '/presentation/components/team/views/addTeam.html',
                 controller: 'addTeamCtl as vm'
-            })    
+            })  
+            .state('welcomeTeam',{
+                url: '/welcome', 
+                parent: 'logged',
+                templateUrl: '/presentation/components/team/views/welcomeTeam.html',
+                controller: 'welcomeTeamCtl as vm'
+            })  
             .state('signup', {
                 url: '/signup', 
                 parent: 'no-logged',

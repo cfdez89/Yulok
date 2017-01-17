@@ -28,7 +28,7 @@
         }
 
         function welcomeMessage(pUsername) {
-            var message = 'Welcome '+pUsername+' You registered for Yulok.<br />Please enter your team data.';
+            var message = 'Welcome '+pUsername+' You registered for Yulok.<br />Please complete your profile.';
 		    notificationService.showSuccess(message);
         };
 
@@ -50,7 +50,7 @@
                 var emailSuccessStatus = validationService.isEmail(pData.username);
 				var passwordSuccessStatus = validationService.comparePassword(pData.password, pData.confirmPassword);
 				var lengthPasswordSuccesStatus =  validationService.isPasswordMin(pData.password);
-console.log(pData);console.log(emailSuccessStatus);
+                console.log(pData);console.log(emailSuccessStatus);
                 /*if(!emailSuccessStatus) {
 				    var message = 'La dirección de correo '+pData.email+' no es válida.';
 				    notificationService.showError(message);
@@ -78,10 +78,12 @@ console.log(pData);console.log(emailSuccessStatus);
 
             checkStatus.checked ? $('#password').attr('type', 'text')
                                 : $('#password').attr('type', 'password'); 
+            checkStatus.checked ? $('#confirmPassword').attr('type', 'text')
+                                : $('#confirmPassword').attr('type', 'password'); 
         };
 
         vm.validData  = validData;
-        //vm.showPassword = showPassword;
+        vm.showPassword = showPassword;
 
 
     };
